@@ -9,8 +9,8 @@
             "request": "launch",
             "type": "cortex-debug",
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceFolder}/target/thumbv7em-none-eabi/release/stm32f103c8t6",
-            "svdFile": "${workspaceFolder}/STM32F401.svd",
+            "executable": "${workspaceFolder}/target/thumbv7em-none-eabi/debug/test_f401",
+            "svdFile": "${workspaceFolder}/STM32F40x.svd",
             "servertype": "openocd",
             "configFiles": ["st_nucleo_f4.cfg"],
             "preLaunchTask": "Build binary",
@@ -18,7 +18,7 @@
                 "monitor init",
                 "monitor reset init",
                 "monitor halt",
-                "monitor flash write_image erase ./target/thumbv7em-none-eabi/release/stm32f103c8t6.bin 0x08000000"
+                "monitor flash write_image erase ./target/thumbv7em-none-eabi/debug/test_f401.bin 0x08000000"
             ],
             "postLaunchCommands": ["continue"] // This is to prevent the debugger from stopping before the program is executed        
         }

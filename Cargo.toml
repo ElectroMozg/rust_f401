@@ -1,7 +1,7 @@
 [package]
-name = "stm32f103c8t6"
+name = "test_f401"
 version = "0.1.0"
-authors = ["Nick"]
+authors = ["Oleg"]
 edition = "2018"
 
 # Зависимости для разработки под процессор Cortex-M3
@@ -20,7 +20,7 @@ features = ["stm32f401", "rt"]
 
 # Позволяет использовать `cargo fix`!
 [[bin]]
-name = "stm32f103c8t6"
+name = "test_f401"
 test = false
 bench = false
 
@@ -29,3 +29,14 @@ bench = false
 codegen-units = 1 # Лучшая оптимизация
 debug = true # Нормальные символы, не увеличивающие размер на Flash памяти
 lto = true # Лучшая оптимизация
+
+[target.thumbv7em-none-eabi]
+runner = "arm-none-eabi-gdb -q"
+# runner = "gdb-multiarch -q"
+# runner = "gdb -q"
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]
+
+[build]
+target = "thumbv7em-none-eabi"

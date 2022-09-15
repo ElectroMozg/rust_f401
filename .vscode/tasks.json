@@ -19,8 +19,8 @@
             "command": "arm-none-eabi-objcopy",
             "args": [
                 "--output-target", "binary",
-                "./target/thumbv7em-none-eabi/release/blinky",
-                "./target/thumbv7em-none-eabi/release/blinky.bin"],
+                "./target/thumbv7em-none-eabi/debug/test_f401",
+                "./target/thumbv7em-none-eabi/debug/test_f401.bin"],
             "problemMatcher": [
                 "$rustc"
             ],
