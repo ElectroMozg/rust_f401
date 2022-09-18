@@ -25,24 +25,19 @@ fn main() -> ! {
     let mut led1 = gpioc.pc15.into_push_pull_output();
     let mut led2 = gpiod.pd2.into_push_pull_output();
     // define RX/TX pins
-    let mut test :u16 = 1;
+
 
     loop {
         // print some value every 500 ms, value will overflow after 255
-        test = 2;
-        if test == 2{
+
             led1.set_high();
             led2.set_high();
-        }
+    
 
         delay.delay(2.secs());
-        test = 3;
-        if test == 3 {
+
             led1.set_low();
             led2.set_low();
-        }
-    
-       
         delay.delay(2.secs());
     }
     

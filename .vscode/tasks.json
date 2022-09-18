@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Cargo build",
+            "label": "Cargo build ",
             "type": "shell",
             "command": "cargo",
             "args": ["build", "--release"],
@@ -19,8 +19,8 @@
             "command": "arm-none-eabi-objcopy",
             "args": [
                 "--output-target", "binary",
-                "./target/thumbv7em-none-eabi/debug/test_f401",
-                "./target/thumbv7em-none-eabi/debug/test_f401.bin"],
+                "./target/thumbv7em-none-eabi/release/test_f401",
+                "./target/thumbv7em-none-eabi/release/test_f401.bin"],
             "problemMatcher": [
                 "$rustc"
             ],
